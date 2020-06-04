@@ -15,5 +15,5 @@ pipeline{
                 sh "mvn test"
     }
          stage("deploy"){
-                sh "echo "hello" "
+                sh "echo "shabbir" "
 }
