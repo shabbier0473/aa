@@ -18,9 +18,6 @@ pipeline{
             }
         }
     }
-<<<<<<< HEAD
          stage("deploy"){
                 sh  "shabbir"
-=======
->>>>>>> 167690b64494892834744c5a2644e08e278c7fa8
 }
