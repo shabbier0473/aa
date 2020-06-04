@@ -5,15 +5,22 @@ pipeline{
         stage("build"){
             steps {
                 sh "mvn compile"
-                sh "mvn test"
-                sh "mvn package"
-                sh  "mvn install"
             }
         }
-        stage ("test"){
+        stage("test"){
             steps{
                 sh "mvn test"
+            }
+        }
+        stage ("deploy"){
+            steps{
+                sh "echo deployed"
+            }
+        }
     }
+<<<<<<< HEAD
          stage("deploy"){
-                sh "echo "shabbir" "
+                sh  "shabbir"
+=======
+>>>>>>> 167690b64494892834744c5a2644e08e278c7fa8
 }
