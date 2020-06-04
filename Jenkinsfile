@@ -21,3 +21,4 @@ pipeline{
          stage("deploy"){
                 sh  "shabbir"
 }
+}
