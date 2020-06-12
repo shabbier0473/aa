@@ -11,7 +11,7 @@ pipeline{
         stage ("master"){
             when { branch  'master' }
             steps{
-                sh "echo master"
+                sh "echo masterr"
             }
         }
     }
