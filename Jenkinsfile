@@ -2,22 +2,16 @@ pipeline{
     agent any
     tools { maven "MAVEN_HOME" }
     stages{
-        stage("build"){
+        stage("devlop"){
             when { branch 'devlop' }
             steps {
-                sh "mvn compile"
+                sh "echo devlop"
             }
         }
-        stage("test"){
-            when { branch 'devlop' }
-            steps{
-                sh "mvn test"
-            }
-        }
-        stage ("deploy"){
+        stage ("master"){
             when { branch  'master' }
             steps{
-                sh "echo deployed"
+                sh "echo master"
             }
         }
     }
