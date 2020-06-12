@@ -15,7 +15,7 @@ pipeline{
             }
         }
         stage ("deploy"){
-            when { branch { 'master' }
+            when { branch  'master' }
             steps{
                 sh "echo deployed"
             }
