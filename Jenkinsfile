@@ -3,7 +3,7 @@ pipeline{
     tools { maven "MAVEN_HOME" }
     stages{
         stage("devlop"){
-            when { branch 'devlop' }
+            when { expression { BRANCH == 'origin/release'  || BRANCH == 'release' } }
             steps {
                 sh "echo devlop"
             }
