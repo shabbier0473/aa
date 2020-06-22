@@ -1,8 +1,10 @@
-node ('master'){
+node{
     try{
         echo "build"
+    }
+
     currentBuild.result = 'SUCCESS'
-    }    
+}    
     catch (err) {
         currentBuild.result = 'FAILURE'
     }
@@ -11,4 +13,3 @@ node ('master'){
         subject: "status of pipeline",
         body: "${env.BUILD_URL} has result ${currentBuild.result}",
     }
-}
