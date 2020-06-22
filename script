@@ -1,14 +1,12 @@
-node{
+node ('master'){
     try{
-        stage('build'){
-            echo "build"
-        }
+        echo "build"
     currentBuild.result = 'SUCCESS'
     }    
     catch (err) {
         currentBuild.result = 'FAILURE'
     }
-    finally{
+    finally {
         mail to: 'shabbir0473@gmail.com',
         subject: "status of pipeline",
         body: "${env.BUILD_URL} has result ${currentBuild.result}",
