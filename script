@@ -4,7 +4,7 @@ node{
     }
     currentBuild.result = 'SUCCESS'
 }
-catch (err) {
+catchError{
     currentBuild.result = 'FAILURE'
 }
 finally {
