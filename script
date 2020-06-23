@@ -1,15 +1,15 @@
 node{
     try{
-        echo "build"
+        echo "shabbier"
     }
-
     currentBuild.result = 'SUCCESS'
-}    
-    catch (err) {
-        currentBuild.result = 'FAILURE'
-    }
-    finally {
-        mail to: 'shabbir0473@gmail.com',
-        subject: "status of pipeline",
-        body: "${env.BUILD_URL} has result ${currentBuild.result}",
-    }
+}
+catch (err) {
+    currentBuild.result = 'FAILURE'
+}
+finally {
+    mail to: 'shabbir0473@gmail.com',
+    subject: 'build status',
+    body: "${env.BUILD_URL} has result ${currentBuild.result}",
+}
+}
