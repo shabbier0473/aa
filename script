@@ -1,15 +1,9 @@
-node{
-    try{
-        echo "shabbier"
+node {
+    try {
+        sh 'might fail'
+    } catch (err) {
+        echo "Caught: ${err}"
+        currentBuild.result = 'FAILURE'
     }
-    currentBuild.result = 'SUCCESS'
+    step([$class: 'Mailer', recipients: 'shabbir0473@gmail.com'])
 }
-catchError{
-    currentBuild.result = 'FAILURE'
-}
-finally {
-    mail to: 'shabbir0473@gmail.com',
-    subject: 'build status',
-    body: "${env.BUILD_URL} has result ${currentBuild.result}",
-}
-
